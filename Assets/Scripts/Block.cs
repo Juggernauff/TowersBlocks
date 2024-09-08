@@ -7,7 +7,7 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Block"))
+        if (collision.gameObject.CompareTag("Block"))
         {
             OnBlockLanded?.Invoke();
         }

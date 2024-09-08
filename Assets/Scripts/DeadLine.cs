@@ -7,7 +7,7 @@ public class BottomTrigger : MonoBehaviour
         if (other.CompareTag("Block"))
         {
             Debug.Log("THE END!");
-            Destroy(other.gameObject);
+            // TODO: Закончить мини игру!
         }
     }
 }

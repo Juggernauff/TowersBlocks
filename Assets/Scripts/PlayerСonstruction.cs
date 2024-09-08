@@ -3,6 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(BlockSpawner))]
 public class PlayerСonstruction : MonoBehaviour
 {
+    [SerializeField] private float timeBetweenBuilds = 2.0f;
+
+    private float lastBuildTime = 0.0f;
     private PlayerInput _playerInput;
     private BlockSpawner _blockSpawner;
 
@@ -26,9 +29,17 @@ public class PlayerСonstruction : MonoBehaviour
 
     private void Build()
     {
-        if (_blockSpawner != null)
+        if (Time.time - lastBuildTime >= timeBetweenBuilds)
         {
-            _blockSpawner.SpawnBlock();
+            if (_blockSpawner != null)
+            {
+                _blockSpawner.SpawnBlock();
+                lastBuildTime = Time.time;
+            }
+        }
+        else
+        {
+            Debug.Log("Слишком быстро! Подождите перед следующим нажатием.");
         }
     }
 }
