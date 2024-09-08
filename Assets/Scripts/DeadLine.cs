@@ -8,7 +8,6 @@ public class BottomTrigger : MonoBehaviour
         {
             Debug.Log("THE END!");
             Destroy(other.gameObject);
-            Application.Quit();
         }
     }
 }

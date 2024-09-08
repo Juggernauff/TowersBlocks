@@ -26,7 +26,7 @@ public class Player—onstruction : MonoBehaviour
 
     private void Build()
     {
-         if (_blockSpawner != null)
+        if (_blockSpawner != null)
         {
             _blockSpawner.SpawnBlock();
         }
